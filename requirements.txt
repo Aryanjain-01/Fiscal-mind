@@ -1,0 +1,5 @@
+# The app runs with Python standard library only.
+#
+# Optional PDF extraction:
+# pymupdf
+# pypdf

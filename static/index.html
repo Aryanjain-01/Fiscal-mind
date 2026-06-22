@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fiscal Mind</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace">
+        <aside class="sidebar">
+          <div class="brand">
+            <div class="mark">FR</div>
+            <div>
+              <h1>Fiscal Mind</h1>
+              <p>Annual reports, filings, earnings notes</p>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head">
+              <h2>Reports</h2>
+              <button id="loadSampleBtn" class="icon-button" title="Load sample reports">Sample</button>
+            </div>
+            <div id="stats" class="stats">0 documents · 0 chunks</div>
+            <div id="documentList" class="document-list"></div>
+            <button id="clearBtn" class="ghost-button">Clear library</button>
+          </div>
+
+          <form id="uploadForm" class="panel upload-panel">
+            <h2>Add report</h2>
+            <label>
+              File
+              <input id="fileInput" type="file" accept=".txt,.md,.csv,.pdf" />
+            </label>
+            <label>
+              Or paste text
+              <textarea id="reportText" rows="8" placeholder="Paste annual report, income statement commentary, MD&A, or earnings transcript text..."></textarea>
+            </label>
+            <button type="submit" class="primary-button">Index report</button>
+            <p id="uploadStatus" class="status"></p>
+          </form>
+        </aside>
+
+        <section class="main-panel">
+          <div class="query-card">
+            <div>
+              <h2>Ask a finance question</h2>
+              <p>Answers are grounded in retrieved report chunks with citations.</p>
+            </div>
+            <form id="queryForm" class="query-form">
+              <input
+                id="queryInput"
+                type="text"
+                value="What drove revenue growth and what risks should investors watch?"
+                autocomplete="off"
+              />
+              <button type="submit" class="primary-button">Ask</button>
+            </form>
+          </div>
+
+          <div class="answer-grid">
+            <section class="answer-panel">
+              <h2>Answer</h2>
+              <div id="answer" class="answer empty">Load sample reports or upload your own, then ask a question.</div>
+            </section>
+
+            <section class="metrics-panel">
+              <h2>Detected metrics</h2>
+              <div id="metrics" class="chips"></div>
+            </section>
+          </div>
+
+          <section class="sources-panel">
+            <h2>Retrieved evidence</h2>
+            <div id="sources" class="sources"></div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

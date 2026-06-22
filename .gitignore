@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+.DS_Store
+
+# Runtime document library; uploaded reports may contain private data.
+data/*
+!data/.gitkeep
